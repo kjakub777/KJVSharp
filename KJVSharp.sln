@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KJVSharp.UWP", "KJVSharp\KJ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KJVSharp", "KJVSharp\KJVSharp\KJVSharp.csproj", "{9437391A-9EE6-457D-8094-D1FAB62F1614}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A3F99EC-18E0-4223-856A-D48AD611236B}"
+	ProjectSection(SolutionItems) = preProject
+		LinqEntensions.cs = LinqEntensions.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

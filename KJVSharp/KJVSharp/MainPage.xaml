@@ -2,13 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:KJVSharp"
-             x:Class="KJVSharp.MainPage">
-
+             xmlns:models="clr-namespace:KJVSharp.ViewModels"
+             x:Class="KJVSharp.MainPage"      >
+    
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="KJV Sharpener!"  FontSize="Large" FontAttributes="Bold" Font="Sans" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Picker x:Name ="bPicker" Title="Books" ItemsSource="{Binding Books}" ItemDisplayBinding="{Binding BookName}" SelectedItem="{Binding SelectedBook}"  BackgroundColor="LightBlue" />
+        <Picker Title="Select a Book" ItemsSource="{Binding Books}" ItemDisplayBinding="{Binding BookName}" SelectedItem="{Binding SelectedBook}" />
+			<Label Text="{Binding SelectedBook.Name}" HorizontalOptions="Center" Style="{DynamicResource TitleStyle}" />
+			<Label Text="{Binding SelectedBook.Location}" FontAttributes="Italic" HorizontalOptions="Center" />
+
+        <Label Text="{Binding SelectedBook.BookName}"  />
+        <ListView x:Name="vList"   ItemTapped="vList_ItemTapped" ItemsSource="{Binding Verses}">
+            <ListView.ItemTemplate >
+                <DataTemplate x:DataType="local:Verse"  x:Name="vdt" >
+                    <TextCell  Text="{Binding Text}" DetailColor="SkyBlue" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
+<!--<Picker Title="Select a monkey"
+        ItemsSource="{Binding Monkeys}"
+        ItemDisplayBinding="{Binding Name}"
+        SelectedItem="{Binding SelectedMonkey}" />
+<Label Text="{Binding SelectedMonkey.Name}" ... />
+<Label Text="{Binding SelectedMonkey.Location}" ... />
+<Image Source="{Binding SelectedMonkey.ImageUrl}" ... />
+<Label Text="{Binding SelectedMonkey.Details}" ... />-->
